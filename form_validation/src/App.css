@@ -1,0 +1,54 @@
+.App {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+table{
+  width:100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1vw;
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+th , td , tr{
+  border:solid 1px;
+}
+td{
+  height: 3vw;
+}
+input[type='text']{
+  width:90%;
+  height: 3vw;
+}
+input[type='email']{
+  width:90%;
+  height: 3vw;
+}
+input[type='tel']{
+  width:90%;
+  height: 3vw;
+}
+textarea{
+  width:90.5%;
+  height: 3vw;
+}
+input[type='password']{
+  width:90%;
+  height: 3vw;
+}
+input[type='date']{
+  width:90%;
+  height: 3vw;
+}
+button{
+  padding: 1vw;
+  margin-right: 2vw;
+}
+
+@media screen and (max-width:700px) {
+  .App{
+    margin:0;
+    width: 100%;
+  }
+}
+
