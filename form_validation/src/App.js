@@ -12,8 +12,28 @@ function App() {
   }
   const submitHandler = (e) =>{
     e.preventDefault();
-    if(counter===1)  document.getElementById('res').innerHTML = "<p style='color:blue'>Your data saved</p>";
+    let temp =1;
+    if(document.getElementById('s').checked)  temp = 0;
+    if(document.getElementById('d').checked)  temp = 0;
+    if(document.getElementById('c').checked)  temp = 0;
 
+
+    if(temp){
+      document.getElementById('check').style.borderColor = 'red';
+      document.getElementById('check').style.color = 'red';
+      setCounter(0); 
+      return
+    }  
+    else{
+      document.getElementById('check').style.borderColor = 'black';
+      document.getElementById('check').style.color = 'black';
+    }
+
+    
+    if(counter===1)  document.getElementById('res').innerHTML = "<p style='color:blue'>Your data saved</p>";
+   
+  
+     
   }
   const changeColor = () =>{
     document.getElementById('check').style.borderColor = 'black';
@@ -62,9 +82,9 @@ function App() {
         <tr>
           <td>Choose Your Hobbies</td>
           <td id='check'>
-            Cricket <input id='c'  type='checkbox' onInvalid={notValid}></input>
-            singing <input id='s' type='checkbox' onInvalid={notValid}></input>
-            Dancing <input id='d' type='checkbox' onInvalid={notValid}></input>
+            Cricket <input id='c'  type='checkbox'  onInvalid={notValid}></input>
+            singing <input id='s' type='checkbox'   onInvalid={notValid}></input>
+            Dancing <input id='d' type='checkbox'  onInvalid={notValid}></input>
           </td>
         </tr>
         <tr>
