@@ -10,47 +10,10 @@ function App() {
     document.getElementById('res').innerHTML = "";
     setCounter(1);
   }
-  const submitHandler = () =>{
-    // e.preventDefault();
-    // let temp =1;
-    // if(document.getElementById('s').checked)  temp = 0;
-    // if(document.getElementById('d').checked)  temp = 0;
-    // if(document.getElementById('c').checked)  temp = 0;
-
-    // if(temp){
-    //   document.getElementById('check').style.borderColor = 'red';
-    //   document.getElementById('check').style.color = 'red';
-    // }  
-    // else{
-    //   document.getElementById('check').style.borderColor = 'black';
-    //   document.getElementById('check').style.color = 'black';
-    // }
-
-    // let name = document.getElementById('name').value;
-    // let email = document.getElementById('email').value;
-    // let password = document.getElementById('password').value;
-    // let address = document.getElementById('address').value;
-    // let num = document.getElementById('num').value;
-    // let gender = '';
-    // if(document.getElementById('m').checked)  gender = 'male';
-    // if(document.getElementById('f').checked)  gender = 'female';
-    // let file = document.getElementById('file').value;
-    // let date = document.getElementById('date').value;
-    // let temp2 = 1;
-    // if(
-    //     name === "" ||
-    //     email ==="" ||
-    //     password ==="" ||
-    //     address ==="" ||
-    //     num ==="" ||
-    //     gender ==="" ||
-    //     file === "" ||
-    //     date === "" 
-    //   ) temp2 = 0;
+  const submitHandler = (e) =>{
+    e.preventDefault();
     if(counter===1)  document.getElementById('res').innerHTML = "<p style='color:blue'>Your data saved</p>";
-   
-  
-     
+
   }
   const changeColor = () =>{
     document.getElementById('check').style.borderColor = 'black';
@@ -64,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <form action='#'>
+      <form action='#' onSubmit={submitHandler}>
       <table><tbody>
         <tr>
           <td id='res' colSpan={2}></td>
@@ -114,7 +77,7 @@ function App() {
         </tr>
         <tr>
           <td colSpan={2} style={{textAlign:'center'}}>
-            <button type='submit' onClick={submitHandler}>Register Me</button>
+            <button type='submit'>Register Me</button>
             <button type='reset'onClick={changeColor} >Reset</button>
           </td>
         </tr>
